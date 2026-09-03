@@ -9,56 +9,59 @@
   *{box-sizing:border-box}
   html,body{margin:0;padding:0;background:#fff;color:#000}
   body{font:10pt/1.25 "Helvetica Neue",Arial,sans-serif;-webkit-font-smoothing:antialiased}
-  .sheet{max-width:190mm;margin:0 auto;padding:8mm}
-  h1{font-size:13pt;margin:0 0 1mm;letter-spacing:.02em;text-transform:uppercase}
-  .sub{font-size:8.5pt;margin:0 0 3mm}
+  .sheet{max-width:190mm;margin:0 auto;padding:6mm 0}
+
+  /* dva sloupce = dve poloviny po prelozeni; nic nepresahuje pres obe */
+  .cols{display:flex;align-items:flex-start}
+  .col{flex:0 0 50%;max-width:50%;min-width:0;padding:0 7mm}
+  .col+.col{border-left:.3pt dashed #aaa}
+
   h2{font-size:8pt;margin:0 0 1mm;letter-spacing:.1em;text-transform:uppercase;
      border-bottom:1.2pt solid #000;padding-bottom:.6mm}
-  .cols{display:flex;gap:6mm;align-items:flex-start}
-  .col{flex:1 1 0;min-width:0}
   .blk{margin:0 0 3.5mm}
+  .lead{font-size:8.5pt;margin:0 0 3.5mm;padding:1.4mm 2mm;border:.8pt solid #000}
+  .lead b{white-space:nowrap}
   table{border-collapse:collapse;width:100%;font-size:8.5pt}
   th,td{text-align:left;padding:.7mm 1.2mm;border-bottom:.4pt solid #999;vertical-align:top}
-  thead th{font-size:7pt;letter-spacing:.06em;text-transform:uppercase;
-           border-bottom:.8pt solid #000}
+  thead th{font-size:7pt;letter-spacing:.06em;text-transform:uppercase;border-bottom:.8pt solid #000}
   tr.k td{background:#e8e8e8;font-weight:700}
   td.n,th.n{font-variant-numeric:tabular-nums;white-space:nowrap}
-  .tf td:first-child{white-space:nowrap;width:22mm}
+  .tf td:first-child{white-space:nowrap}
   .note{font-size:8pt;margin:1.5mm 0 0}
   .note b{white-space:nowrap}
   ul{margin:1mm 0 0;padding-left:3.6mm;font-size:8pt}
-  li{margin:.4mm 0}
+  li{margin:.5mm 0}
   s{text-decoration:line-through}
   @media screen{
     body{background:#f4f4f4;padding:6mm 0}
     .sheet{background:#fff;box-shadow:0 1px 6px rgba(0,0,0,.25)}
-    .hint{max-width:190mm;margin:0 auto 4mm;padding:0 8mm;font-size:9pt;color:#555}
+    .hint{max-width:190mm;margin:0 auto 4mm;padding:0 7mm;font-size:9pt;color:#555}
   }
   @media print{.hint{display:none}}
 </style>
 </head>
 <body>
-<p class="hint">Černobílá verze na tisk (A4, na půl stránky). Ctrl+P &rarr; bez záhlaví a zápatí.</p>
+<p class="hint">Na tisk: A4, Ctrl+P, vypnout záhlaví a zápatí. Přeložit svisle podle čárkované linky -
+každá polovina je samostatná.</p>
 <div class="sheet">
-
-<h1>Baroko &middot; 5. 9. 2026 &middot; 42,37 km &middot; +728 m</h1>
-<p class="sub">Cíl <b>3:35</b> (rozsah 3:30-3:42). Na rovině <b>TF 150 = 4:45-4:52/km</b>.
-Bez láhve - pije se jen na občerstvovačkách. <b>Meta: km &times; 5 min = strop, za ní máš být celou dobu.</b></p>
-
 <div class="cols">
 
   <div class="col">
+    <p class="lead"><b>Baroko 5. 9. 2026</b> &middot; 42,37 km &middot; +728 m &middot; cíl
+    <b>3:35</b><br>Na rovině <b>TF 150 = 4:45-4:52/km</b><br>Bez láhve - pije se jen na
+    občerstvovačkách<br><b>Meta km &times; 5 min je strop</b>, za ní máš být celou dobu</p>
+
     <div class="blk">
       <h2>Tepová frekvence</h2>
       <table class="tf">
         <tbody>
           <tr class="k"><td>0 - 2 km</td><td>volně, 4:55-5:00 podle TEMPA</td></tr>
-          <tr><td>první kopec</td><td>158 průměr, 162 jen krátce</td></tr>
+          <tr><td>první kopec</td><td>průměr 158, krátce 162</td></tr>
           <tr><td>2 - 17 km</td><td>kopce 158, rovina 155</td></tr>
           <tr><td>17 - 34 km</td><td>kopce 165, rovina 160</td></tr>
-          <tr><td>34 - cíl</td><td>volně, max 165</td></tr>
+          <tr><td>34 km - cíl</td><td>volně, max 165</td></tr>
           <tr><td>seběhy</td><td>tempo a stehna, TF ignoruj</td></tr>
-          <tr class="k"><td>kontrola</td><td>nedýcháš nosem 10 min = moc rychle</td></tr>
+          <tr class="k"><td>kontrola</td><td>nedýcháš nosem prvních 10 min = moc rychle</td></tr>
         </tbody>
       </table>
     </div>
@@ -71,7 +74,7 @@ Bez láhve - pije se jen na občerstvovačkách. <b>Meta: km &times; 5 min = str
           <tr><td class="n">6</td><td>klesání do Vrážného</td><td class="n">0:32:53</td><td class="n">0:32:05</td></tr>
           <tr><td class="n">10</td><td></td><td class="n">0:52:37</td><td class="n">0:51:25</td></tr>
           <tr><td class="n">12</td><td>hodina</td><td class="n">1:02:30</td><td class="n">1:01:10</td></tr>
-          <tr><td class="n">17</td><td>hodina a půl, vrchol</td><td class="n">1:29:31</td><td class="n">1:27:31</td></tr>
+          <tr><td class="n">17</td><td>hodina a půl, vrchol trati</td><td class="n">1:29:31</td><td class="n">1:27:31</td></tr>
           <tr><td class="n">20</td><td></td><td class="n">1:42:07</td><td class="n">1:40:01</td></tr>
           <tr><td class="n">21</td><td>půlka</td><td class="n">1:46:57</td><td class="n">1:44:43</td></tr>
           <tr class="k"><td class="n">24</td><td>tyčinka na 24,8</td><td class="n">2:01:23</td><td class="n">1:58:45</td></tr>
@@ -80,7 +83,8 @@ Bez láhve - pije se jen na občerstvovačkách. <b>Meta: km &times; 5 min = str
           <tr class="k"><td class="n">42,37</td><td>cíl</td><td class="n">3:35:02</td><td class="n">3:30:13</td></tr>
         </tbody>
       </table>
-      <p class="note">Řiď se sloupcem 3:35. <b>12 km = 1 h</b>, <b>24 km = 2 h</b>, <b>36 km = 3 h</b>.</p>
+      <p class="note">Řiď se sloupcem 3:35. <b>12 km = 1 h</b>, <b>24 km = 2 h</b>,
+      <b>36 km = 3 h</b>.</p>
     </div>
   </div>
 
@@ -102,18 +106,15 @@ Bez láhve - pije se jen na občerstvovačkách. <b>Meta: km &times; 5 min = str
         </tbody>
       </table>
       <p class="note"><b>2 kelímky izotoniku</b> (ne vodu) na každé stanici, zpomal do chůze na
-      10-15 s. <b>25,3 &rarr; 31,5 je 6,2 km bez pití.</b></p>
+      10-15 s. <b>Z 25,3 na 31,5 je 6,2 km bez pití.</b></p>
     </div>
 
     <div class="blk">
-      <h2>S sebou &middot; před startem</h2>
+      <h2>S sebou</h2>
       <ul>
         <li><b>5 tyčinek</b>: 3 celé + 2 nakrájené na 4 zabalené půlky</li>
-        <li><b>3 sodíkové tablety</b>: 1 před startem s tekutinou, pak 10,6 a 31,5. Nikdy nasucho,
-          žádnou před stoupáním na 25,1. Při horku čtvrtá na 19,7</li>
-        <li>Rozklusání <b>10 min volně + 3-4 rovinky</b> - prohřeje kůži pro snímač</li>
-        <li>Hodinky utažené, 1-2 prsty nad kostí zápěstí, na kůži</li>
-        <li>Snídaně 2,5-3 h před, 100-150 g sacharidů, <b>nic nového</b></li>
+        <li><b>Sodíkové tablety</b>: 1 před startem s tekutinou, pak na 10,6 a 31,5 (při horku
+          i na 19,7). Vždy s plným kelímkem, nikdy nasucho, žádnou před stoupáním na 25,1</li>
         <li><b>Po km 35 se už nejí.</b> Celé tyčinky jen do km 25</li>
       </ul>
     </div>
@@ -121,13 +122,14 @@ Bez láhve - pije se jen na občerstvovačkách. <b>Meta: km &times; 5 min = str
     <div class="blk">
       <h2>Tři pravidla</h2>
       <ul>
-        <li><b>Km 0-4 rozhoduje.</b> Prvních 1,8 km podle tempa, ne hodinek. Nech lidi odběhnout.
-          Nedá se to později napravit</li>
+        <li><b>Km 0-4 se prohrává.</b> Prvních 1,8 km podle tempa, ne podle hodinek. Nech lidi
+          odběhnout. Později se to už nedá napravit</li>
         <li><b>Km 17-20 seběh: 4:20, ne 4:00.</b> Na km 25 čeká 7,2 %</li>
-        <li><b>Km 24,8: tyčinka na rovině</b>, spláchni na 25,3. Neodkládej</li>
+        <li><b>Km 24,8: tyčinka na rovině</b>, spláchni ji na 25,3. Neodkládej to</li>
       </ul>
-      <p class="note"><b>Km 25-28,5 rozhoduje:</b> s TF 155-158 předbíháš do cíle, s TF 165 tam
-      závod skončí. Poslední třetina: <b>nohy před dýcháním</b>. Prvních 10 km ignoruj pole.</p>
+      <p class="note"><b>Km 25-28,5 se vyhrává:</b> s TF 155-158 předbíháš až do cíle, s TF 165 tam
+      závod skončí. Poslední třetina: <b>nohy před dýcháním</b>. Prvních 10 km ignoruj startovní
+      pole.</p>
     </div>
   </div>
 
